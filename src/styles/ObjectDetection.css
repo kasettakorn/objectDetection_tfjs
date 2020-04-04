@@ -7,20 +7,6 @@ input {
     z-index: -1;
   }
   
-  button,
-  label,
-  ul {
-    width: 300px;
-    box-sizing: border-box;
-    border: solid 1px white;
-    background: black;
-    color: white;
-    font-size: 24px;
-    margin: auto;
-    padding: 10px;
-  }
-
-  
   
   img {
     width: 300px;
@@ -32,4 +18,18 @@ input {
     text-align: center;
     align-items: center;
     padding: 30px;
+  }
+  .resultCard {
+ 
+    height: 100%;
+    background-color: #dfa336;
+    border-radius: 13px;
+    padding: 20px;
+    margin-bottom: 20px;
+  } 
+  .resultCard > li {
+    font-size: 30px;
+    padding: 10px;
+    font-weight: 500;
+    color: white;
   }

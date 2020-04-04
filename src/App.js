@@ -9,7 +9,7 @@ function App() {
     <div>
     <Layout>
         <Header style={{
-          height: "25vh",
+          height: "25%",
           width: "100%",
           paddingBottom: '10px',
           backgroundColor: "#485461",
@@ -25,7 +25,9 @@ function App() {
 
         </Content>
         <Footer>
-
+          <center>
+            Develop by Ronnakorn Hompoa ©2020
+          </center>
         </Footer>
       </Layout>      
     </div>

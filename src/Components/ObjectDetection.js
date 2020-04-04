@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useReducer } from 'react';
 import * as mobilenet from '@tensorflow-models/mobilenet';
-import { Button, Spin } from 'antd';
+import { Button, Spin, Card } from 'antd';
 import '../styles/ObjectDetection.css'
 
 const machineStates = {
@@ -92,13 +92,11 @@ function ObjectDetection() {
                 ref={inputRef}
             />
             {showResult && (
-                <ul>
+                <div className="resultCard">
                     {result.map(({ className, probability }) => (
-                        <li key={className}>{`${className}: %${(probability * 100).toFixed(
-                            2
-                        )}`}</li>
+                        <li key={className}>{`${className}: ${(probability * 100).toFixed(2)}%`}</li>
                     ))}
-                </ul>
+                </div>
             )}
             <Button type="primary" size="large" onClick={actionButton[appState].action || (() => { })}>
                 {actionButton[appState].text}
