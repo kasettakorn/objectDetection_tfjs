@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef, useReducer } from 'react';
 import * as mobilenet from '@tensorflow-models/mobilenet';
-import { Button } from 'antd';
+import { Button, Spin } from 'antd';
+import '../styles/ObjectDetection.css'
 
-const appStates = {
+const machineStates = {
     initial: 'initial',
     states: {
         initial: { on: { next: "loadingModel" } },
@@ -17,12 +18,13 @@ function ObjectDetection() {
     const [model, setModel] = useState(null);
     const [imageURL, setImageURL] = useState(null);
     const [result, setResult] = useState([]);
+    const [loading, setLoading] = useState(true);
     const imageRef = useRef();
     const inputRef = useRef();
 
-    const reducer = (state, event) => appStates.states[state].on[event] || appStates.initial;
+    const reducer = (state, event) => machineStates.states[state].on[event] || machineStates.initial;
 
-    const [state, dispatch] = useReducer(reducer, appStates.initial);
+    const [appState, dispatch] = useReducer(reducer, machineStates.initial);
 
     const nextState = () => dispatch("next");
 
@@ -30,7 +32,9 @@ function ObjectDetection() {
         nextState();
         const model = await mobilenet.load();
         setModel(model);
+        setLoading(false)
         nextState();
+       
     };
 
     const identify = async () => {
@@ -45,9 +49,9 @@ function ObjectDetection() {
         nextState();
     }
 
-    const upload = () => imageRef.current.click();
+    const upload = () => inputRef.current.click();
 
-    const handkeUpload = event => {
+    const handleUpload = event => {
         const { files } = event.target;
         if (files.length > 0) {
             const url = URL.createObjectURL(event.target.files[0]);
@@ -57,7 +61,7 @@ function ObjectDetection() {
     }
 
     const actionButton = {
-        initial: { action: loadModel, text: "Load Model" },
+        initial: { action: loadMobileNet, text: "Load Model" },
         loadingModel: { text: "Loading Model..." },
         modelReady: { action: upload, text: "Upload Image" },
         imageReady: { action: identify, text: "Identify" },
@@ -65,9 +69,20 @@ function ObjectDetection() {
         complete: { action: reset, text: "Reset" }
     };
 
-    const { showImage, showResult } = appStates.states[state]
+    const { showImage, showResult } = machineStates.states[appState];
+    useEffect(() => {
+        loadMobileNet();
+    }, []);
+     if (loading) {
+        return (
+            <center style={{marginTop:"100px"}}>
+                <Spin tip="Loading MobileNet model..."></Spin>
+            </center>
+        );
+    } 
     return (
-        <div>
+
+        <div className="wrapper">
             {showImage && <img src={imageURL} alt="upload-preview" ref={imageRef} />}
             <input
                 type="file"
@@ -76,16 +91,16 @@ function ObjectDetection() {
                 onChange={handleUpload}
                 ref={inputRef}
             />
-            {showResults && (
+            {showResult && (
                 <ul>
-                    {results.map(({ className, probability }) => (
+                    {result.map(({ className, probability }) => (
                         <li key={className}>{`${className}: %${(probability * 100).toFixed(
                             2
                         )}`}</li>
                     ))}
                 </ul>
             )}
-            <Button onClick={actionButton[appState].action || (() => { })}>
+            <Button type="primary" size="large" onClick={actionButton[appState].action || (() => { })}>
                 {actionButton[appState].text}
             </Button>
         </div>

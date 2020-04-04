@@ -2,19 +2,19 @@
     margin: 0px;
     padding: 0px;
 }
+.headerText {
+    margin-top: 60px;
+}
 h1 {
     font-size: 60px;
     font-weight: 800;
     color: aquamarine;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: -20px;
 }
 h3 {
     font-size: 48px;
     font-weight: 800;
     color: white;
     text-align: center;
-    margin-top: 40px;
 
 }
