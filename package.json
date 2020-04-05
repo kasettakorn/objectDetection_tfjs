@@ -1,6 +1,6 @@
 {
   "name": "tensorflow-dog-breed",
-  "homepage": "https://github.com/kasettakorn/objectDetection_tfjs.git",
+  "homepage": "https://kasettakorn.github.io/objectDetection_tfjs/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
