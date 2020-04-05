@@ -27,6 +27,7 @@ function App() {
         <Footer>
           <center>
             Develop by Ronnakorn Hompoa ©2020
+            Implemented by Tensorflow from NPM
           </center>
         </Footer>
       </Layout>      
