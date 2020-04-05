@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/kasettakorn/objectDetection_tfjs.git/static/css/main.2be08301.chunk.css",
+    "main.js": "/kasettakorn/objectDetection_tfjs.git/static/js/main.acfb5ab8.chunk.js",
+    "main.js.map": "/kasettakorn/objectDetection_tfjs.git/static/js/main.acfb5ab8.chunk.js.map",
+    "runtime-main.js": "/kasettakorn/objectDetection_tfjs.git/static/js/runtime-main.f916e097.js",
+    "runtime-main.js.map": "/kasettakorn/objectDetection_tfjs.git/static/js/runtime-main.f916e097.js.map",
+    "static/css/2.ad8fe80d.chunk.css": "/kasettakorn/objectDetection_tfjs.git/static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.7185c909.chunk.js": "/kasettakorn/objectDetection_tfjs.git/static/js/2.7185c909.chunk.js",
+    "static/js/2.7185c909.chunk.js.map": "/kasettakorn/objectDetection_tfjs.git/static/js/2.7185c909.chunk.js.map",
+    "index.html": "/kasettakorn/objectDetection_tfjs.git/index.html",
+    "precache-manifest.a90f95f724d42b5527ffee9861b204f0.js": "/kasettakorn/objectDetection_tfjs.git/precache-manifest.a90f95f724d42b5527ffee9861b204f0.js",
+    "service-worker.js": "/kasettakorn/objectDetection_tfjs.git/service-worker.js",
+    "static/css/2.ad8fe80d.chunk.css.map": "/kasettakorn/objectDetection_tfjs.git/static/css/2.ad8fe80d.chunk.css.map",
+    "static/css/main.2be08301.chunk.css.map": "/kasettakorn/objectDetection_tfjs.git/static/css/main.2be08301.chunk.css.map",
+    "static/js/2.7185c909.chunk.js.LICENSE.txt": "/kasettakorn/objectDetection_tfjs.git/static/js/2.7185c909.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f916e097.js",
+    "static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.7185c909.chunk.js",
+    "static/css/main.2be08301.chunk.css",
+    "static/js/main.acfb5ab8.chunk.js"
+  ]
+}
